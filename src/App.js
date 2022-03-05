@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Candidate from "./Candidate";
 import Accepted from "./Accepted";
 import Rejected from "./Rejected";
+import LoginButton from "./Login";
 
 function App() {
   const [profile, setProfile] = useState({ profile: [] });
@@ -68,6 +69,14 @@ function App() {
             element={
               <ProfileContext.Provider value={{rejected}}>
                 <Rejected rejected={rejected} />
+              </ProfileContext.Provider>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <ProfileContext.Provider value={{rejected}}>
+                <LoginButton rejected={rejected} />
               </ProfileContext.Provider>
             }
           />
